@@ -64,8 +64,8 @@
           <?php echo $e['description']; ?>
         </p>
           <p><br></p>
-          <p><?php echo $e['name']; ?></p>
-          <p><?php echo date("d M Y, H:i", $e['date_modified']); ?></p>
+          <p class="center"><?php echo $e['name']; ?></p>
+          <p class="center"><?php echo date("d M Y, H:i", $e['date_modified']); ?></p>
         
         </article>
 <?php
