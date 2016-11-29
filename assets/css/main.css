@@ -6,6 +6,7 @@
 /* Table of Content
 ==================================================
 	#Main
+	#Tables
 	#Framed image
 
 
@@ -138,10 +139,22 @@ article table tr th, article table tr td {
 	font-family:arial;
 	font-size:10pt;
 }
+p {
+	text-align:left;
+}
+p span {
+	color: #ababab;
+    font-size: 8pt;
+    display: block;
+    font-weight:bold;
+}
+
+/* #Tables
+================================================== */
 label {
 	float:left;
 	font-family:arial;
-	font-size:10pt;
+	font-size:12pt;
 	color:#000;
 	margin-bottom:5px;
 	clear:both;
@@ -159,6 +172,7 @@ input, textarea {
     outline:none;
     font-family:arial;
     margin-bottom:10px;
+    font-size:10pt;
 }
 textarea { min-height:90px; }
 input:focus, textarea:focus {
@@ -209,11 +223,6 @@ form span {
 	 padding:20px;
 	 border:1px solid #4F8A10;
 }
-p span {
-	color: #4a4a4a;
-    font-size: 8pt;
-    display: block;
-}
 
 /* #Framed image
 ================================================== */
@@ -233,3 +242,8 @@ p span {
 	display: block;
 	margin: 0 !important;
 }
+/* #Extras
+================================================== */
+.center { text-align:center; }
+.left { text-align:left; }
+.right { text-align:right; }
