@@ -129,9 +129,16 @@
 		*
 		*/
 		public function WriteUserEntry($userID, $title, $desc) {
+
+			# Do not proceed if user is not logged in
 			if(@$userID < 1)
 				return 0;
 
+			# Strip string from html tags
+			$title = strip_tags($title, '<br><span>');
+			$desc  = strip_tags($desc, '<br><span>');
+
+			# Escapes string to prevent tampering with query.
 			$title = $this->mysqli->real_escape_string($title);
 			$desc  = $this->mysqli->real_escape_string($desc);
 
@@ -140,8 +147,10 @@
 				VALUES ('".$userID."', '".$title."', '".$desc."', '".time()."', '".time()."')
 			";
 
+			# Inserts new record to entries table
 			$result = $this->mysqli->query($sql);
 
+			# If success returns 1.
 			if($result)
 				return 1;
 
@@ -152,6 +161,11 @@
 			if(@$userID < 1 || !is_numeric($entryID))
 				return 0;
 
+			# Strip string from html tags
+			$title = strip_tags($title, '<br><span>');
+			$desc  = strip_tags($desc, '<br><span>');
+
+			# Escapes string to prevent tampering with query.
 			$title = $this->mysqli->real_escape_string($title);
 			$desc = $this->mysqli->real_escape_string($desc);
  
@@ -159,6 +173,7 @@
 				UPDATE entries SET title = '".$title."', description = '".$desc."', date_modified = '".time()."' WHERE user_id = '".$userID."' AND id = '".$entryID."';
 			";
 
+			# Inserts new record to entries table
 			$result = $this->mysqli->query($sql);
 
 			//echo $sql;
