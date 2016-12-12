@@ -64,17 +64,6 @@
 			# Result
 			$result = $this->mysqli->query($sql)->fetch_array(MYSQLI_ASSOC);
 
-			/*
-				Array
-				(
-				    [0] => Array
-				        (
-				            [password] => 
-				        )
-
-				)
-			*/
-
 			# Password does not exist
 			if(!isset($result['password']) || @$result['password'] == '')
 				return 0;
