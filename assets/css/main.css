@@ -149,6 +149,37 @@ p span {
     font-weight:bold;
 }
 
+article section {
+	background-color:#fff;
+	padding:20px 20px;
+	border: 1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: 3px;
+    margin-bottom:10px;
+}
+article section h3 {
+	margin-top:20px;
+	padding-bottom: 20px;
+}
+
+
+article section p {
+	font-size:10pt;
+	font-weight:100;
+	text-transform:none;
+	margin-bottom:0;
+}
+
+article section hr {
+	border: 0;
+    height: 1px;
+    max-width: 250px;
+    width:100%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #808080, rgba(0, 0, 0, 0));
+    display: block;
+    margin:40px auto 10px auto;
+}
+
 /* #Tables
 ================================================== */
 label {
@@ -244,6 +275,7 @@ form span {
 }
 /* #Extras
 ================================================== */
+.credits {font-size:8pt; color:grey;}
 .center { text-align:center; }
 .left { text-align:left; }
 .right { text-align:right; }
