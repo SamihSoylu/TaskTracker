@@ -27,7 +27,7 @@
 			if($userID < 1)
 				return 0;
 
-			$sql = "SELECT id, title, description, date_added, date_modified  FROM entries WHERE user_id = '".$userID."' ORDER BY date_modified DESC LIMIT 50";
+			$sql = "SELECT id, title, description, date_added, date_modified  FROM entries WHERE user_id = '".$userID."' ORDER BY date_added DESC LIMIT 50";
 
 			# Retrieves data from database
 			$result = $this->mysqli->query($sql);
@@ -122,7 +122,7 @@
 					users u 
 				ON 
 					e.user_id = u.id 
-				ORDER BY e.date_modified DESC LIMIT 50";
+				ORDER BY e.date_added DESC LIMIT 50";
 
 			# Retrieves data from database
 			$result = $this->mysqli->query($sql);
