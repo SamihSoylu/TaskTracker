@@ -11,11 +11,11 @@
 
 		"db" => array (
 			"host"     => "localhost", //10.3.0.123
-			"username" => "nivano_wizards",
+			"username" => "task_tracker",
 			//"username" => "root",
-			"password" => "dElAsCnWw",
+			"password" => "task",
 			//"password" => "root",
-			"database" => "nivano_wizards"
+			"database" => "task_tracker"
 		)
 
 	);
