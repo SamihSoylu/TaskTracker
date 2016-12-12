@@ -53,6 +53,12 @@
 		* @param $entryID - integer entry id.
 		*/
 		public function ReadEntry($entryID) {
+
+			# Security Wall 1: Checks if numeric
+			if(!is_numeric($entryID))
+				return 0;
+
+			# Security Wall 2: Escapes for mysql injection
 			$entryID = $this->mysqli->real_escape_string($entryID);
 
 			$sql = "
@@ -214,6 +220,56 @@
 			}
 			//echo "false";
 			return 0;
+		}
+
+		/*
+		* This function finds the first entry ever added to the database. This then returns
+		* the date_added unix time stamp value. This is later used to calculate which entry
+		* belongs to which week.(All Entries page)
+		*/
+		public function getDateOfFirstCreatedEntry() {
+
+			$sql = "SELECT date_added FROM entries ORDER BY date_added DESC LIMIT 1;";
+
+			$result = $this->mysqli->query($sql)->fetch_array(MYSQLI_ASSOC);
+
+			return $result['date_added'];
+
+		}
+
+		/*
+		* Simply calculates if displayed entry week is equal to the retrieved
+		* entry week from the database. This is to sort-out entries under different
+		* week numbers in the AllEntries page.
+		*
+		* @param $current_processed_week - The week number currently displayed on the page
+		* @param $entry_created_week - the week number the $current_processed_week should be.
+		*/
+		public function checkWeek($current_processed_week, $entry_created_week) {
+
+			# If current week is not equal to entry week
+			if($current_processed_week != $entry_created_week) {
+
+				if($current_processed_week == 1) 
+				{
+					$current_processed_week = 52;
+				
+				} else {
+					
+					$current_processed_week--;
+
+				}
+
+				# Second check
+				if($current_processed_week != $entry_created_week) {
+
+					$current_processed_week = $this->checkWeek($current_processed_week, $entry_created_week);
+
+				}
+				
+			}
+
+			return $current_processed_week;
 		}
 
 	}
