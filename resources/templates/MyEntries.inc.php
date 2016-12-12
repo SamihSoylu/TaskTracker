@@ -12,32 +12,23 @@
     <main>
         <article>
         <h2>My entries</h2>
-            <table>
-                <tr>
-                    <th width="60%">Title</th> 
-                    <th>Created</th> 
-                    <th>Last updated</th>
-                </tr>
                 <?php
 
                     if($UserEntries != 0) {
                         foreach($UserEntries as $entry) {
                             ?>
-                <tr>
-                  <td><a href="index.php?p=MyEntries&id=<?php echo $entry['id']; ?>"><?php echo $entry['title']; ?></a></td>
-                  <td><?php echo date("D d M Y H:i:s", $entry['date_added']); ?></td>
-                  <td><?php echo date("D d M Y H:i:s", $entry['date_modified']); ?></td>
-                </tr>
+                <section>
+                  <p class="center"><a href="index.php?p=MyEntries&id=<?php echo $entry['id']; ?>"><?php echo $entry['title']; ?></a></p>
+                </section>
                             <?php
                         }
                     } else {
 
                 ?>
-                <tr>
-                    <td colspan="3">You have no entries</td>
-                </tr>
+                <section>
+                    <p class="center">You have no entries</p>
+                </section>
                 <?php } ?>
-            </table>
         </article>
     </main>
 <?php
