@@ -17,9 +17,11 @@
                     if($UserEntries != 0) {
                         foreach($UserEntries as $entry) {
                             ?>
-                <section>
-                  <p class="center"><a href="index.php?p=MyEntries&id=<?php echo $entry['id']; ?>"><?php echo $entry['title']; ?></a></p>
-                </section>
+                <a href="index.php?p=MyEntries&id=<?php echo $entry['id']; ?>">
+                    <section>
+                      <p class="center"><?php echo $entry['title']; ?></p>
+                    </section>
+                </a>
                             <?php
                         }
                     } else {

@@ -170,6 +170,13 @@ article section p {
 	margin-bottom:0;
 }
 
+article a:hover > section {
+	border-color: #d1d7e8 #ccd0e3 #c1c6d6;
+}
+article > a:hover {
+	text-decoration: none;
+}
+
 article section hr {
 	border: 0;
     height: 1px;
