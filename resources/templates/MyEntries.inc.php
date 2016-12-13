@@ -19,7 +19,7 @@
                             ?>
                 <a href="index.php?p=MyEntries&id=<?php echo $entry['id']; ?>">
                     <section>
-                      <p class="center"><?php echo $entry['title']; ?></p>
+                      <p class="center"><?php echo $entry['title']; ?><span style="clear:none;float:left;">Week <?php echo date('W', $entry['date_added']); ?></span></p>
                     </section>
                 </a>
                             <?php
