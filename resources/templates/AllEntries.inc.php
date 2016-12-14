@@ -61,8 +61,11 @@
                           }
 
                           # Date filter for posts
-                          $entry['description'] = str_replace("[", "<br><br><span>[", $entry['description']);
-                          $entry['description'] = str_replace("]", "]</span><br>", $entry['description']);
+                          $entry['description'] = str_replace("[", "<span>[", $entry['description']);
+                          $entry['description'] = str_replace("]", "]</span>", $entry['description']);
+
+                          # Filter for new lines
+                          $entry['description'] = str_replace("\n", "<br>", $entry['description']);
 
                             ?>
                 <section>
