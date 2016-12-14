@@ -60,6 +60,10 @@
                             echo "<h2>Week ".$current_entry_week."<h2>";
                           }
 
+                          # Date filter for posts
+                          $entry['description'] = str_replace("[", "<br><br><span>[", $entry['description']);
+                          $entry['description'] = str_replace("]", "]</span><br>", $entry['description']);
+
                             ?>
                 <section>
                   <h3><a href="index.php?p=AllEntries&id=<?php echo $entry['entry_id']; ?>"><?php echo $entry['title']; ?></a></h3>
