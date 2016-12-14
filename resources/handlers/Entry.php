@@ -158,8 +158,8 @@
 				return 0;
 
 			# Strip string from html tags
-			$title = strip_tags($title, '<br><span>');
-			$desc  = strip_tags($desc, '<br><span>');
+			$title = strip_tags($title);
+			$desc  = strip_tags($desc);
 
 			# Escapes string to prevent tampering with query.
 			$title = $this->mysqli->real_escape_string($title);
