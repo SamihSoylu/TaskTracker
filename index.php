@@ -69,7 +69,12 @@
 		# Imports page templates based on page name
 		include(INCLUDES_PATH.'header.php'); 
 
-		include(TEMPLATE_PATH.$load_page.'.inc.php');
+		$load_path = TEMPLATE_PATH.$load_page.'.inc.php';
+		if(file_exists($load_path)) {
+			include($load_path);
+		} else {
+			include(TEMPLATE_PATH.'404.php');
+		}
 
 		include(INCLUDES_PATH.'footer.php');
 
