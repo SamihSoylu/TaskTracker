@@ -87,14 +87,12 @@
 			$result = $this->mysqli->query($sql)->fetch_array(MYSQLI_ASSOC);
 
 			/*
-				Array
-				(
-				    [0] => Array
-				        (
-				            [id] => 1
-				        )
+				Query result: 
 
-				)
+				Array
+		        (
+		            [id] => 1
+		        )
 			*/
 
 			if(!isset($result['id']))
@@ -162,6 +160,7 @@
 		**/
 		public function login_user($username, $password) {
 
+			# Pre-local boolean variables
 			$credentials_correct = false;
 			$login_error = false;
 
@@ -169,11 +168,14 @@
 			$user = $this->mysqli->real_escape_string($username);
 			$pass = '';
 
+			# Retrieves and assigns user id to var
 			$user_id = $this->getUserID($user);
 
+			# Encrypt password
 			if($password != "")
 				$pass = $this->encryptPassword($password);
 
+			# Checks if user exists
 			if($user_id < 1) {
 				$login_error = true;
 				$GLOBALS['error_messages'] = "Username does not exist!";
@@ -186,11 +188,11 @@
 
 			}
 
-			# If username exists
+			# If username exists (there will be no login error)
 			if(!$login_error)
 				$credentials_correct = $this->check_username_password_match($user, $pass);
 
-			# If credentials are incorrect
+			# If credentials are incorrect (error msg)
 			if(!$credentials_correct) {
 				$login_error = true;
 				$GLOBALS['error_messages'] = "Username or Password incorrect.";
@@ -221,9 +223,15 @@
 		**/
 		public function set_pass($password, $user_id) {
 
+			/*
+				@note:
+					user id is stored in SESSION therefore not escaped
+			*/
+
 			# Encrypt
 			$pass = $this->encryptPassword($password);
 			
+			# Should never be true
 			if($user_id < 1) {
 				$this->logout_user();
 				return 0;

@@ -5,6 +5,8 @@
   *
   **/
 
+  ## Once a new entry is submitted, a success message is shown.
+  # Meanwhile the if statement disables the forum.
   if(isset($_POST['AddNewEntry'])) {
     $a = true;
   } else {

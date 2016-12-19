@@ -8,7 +8,7 @@
 
 	session_start();
 
-		# Loads configurations
+	 # Loads configurations
 	 require_once("resources/config.php");
 	 require_once("resources/db_connect.php");
 
@@ -19,32 +19,35 @@
 	 # Variables
 	 $load_page = PAGE_NAME;
 	 $GLOBALS['error_messages'] = "x";
-	 $setPassResult = 2;
+
+	 # Used later to determine what to display to the user
+	 # If the user is new (Login/Logout module)
+	 $setPassResult = 2; 
 
 	/**
 	*
 	*   Login / Logout Module
 	*
 	**/
-	 # Login handler
-	 $login_handler = new Login();
+	# Login handler
+	$login_handler = new Login();
 
-		# Loads login page if user is not logged in
-		# Also handles page redirect
-		if(!$login_handler->check_user_logged())
-			$load_page = "Login";
+	# Loads login page if user is not logged in
+	# Also handles page redirect
+	if(!$login_handler->check_user_logged())
+		$load_page = "Login";
 
-		# When login button is clicked
-		if(isset($_POST['login']))
-			$login_handler->login_user(strtolower($_POST['username']), $_POST['password']);
+	# When login button is clicked
+	if(isset($_POST['login']))
+		$login_handler->login_user(strtolower($_POST['username']), $_POST['password']);
 
-		# When set new pass button is clicked
-		if(isset($_POST['setNewPass']))
-			$setPassResult = $login_handler->set_pass($_POST['newPassword'], $_SESSION['user_id']);
+	# When set new pass button is clicked
+	if(isset($_POST['setNewPass']))
+		$setPassResult = $login_handler->set_pass($_POST['newPassword'], $_SESSION['user_id']);
 
-		# If user has no password set
-		if(@$_SESSION['must_set_pswd'] == true)
-			$load_page = 'set_pass';
+	# If user has no password set
+	if(@$_SESSION['must_set_pswd'] == true)
+		$load_page = 'set_pass';
 
 	/**
 	*

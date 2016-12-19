@@ -48,7 +48,7 @@
                             $we_are_processing_first_week = false;
                           }
 
-                          # To keep track of the previous week after the current entry week changes
+                          # To keep track of the previous week, after the current entry week changes.
                           # We determine later if current entry week is different, if so then we display a new week number.
                           $previous_entry_week = $current_entry_week;
 
@@ -74,7 +74,7 @@
                   <hr>
                   <p class="center credits">
 
-                    <?php echo $entry['name']; ?> | <?php echo date("d M H:i", $entry['date_modified']); ?>
+                    <?php /* user name */ echo $entry['name']; ?> | <?php /* last modified */ echo date("d M H:i", $entry['date_modified']); ?>
                       
                   </p>
                 </section>

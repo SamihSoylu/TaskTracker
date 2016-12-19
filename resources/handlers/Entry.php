@@ -100,7 +100,7 @@
 			    (
 			        [entry_id] => 8
 			        [user_id] => 1
-			        [name] => Samih
+			        [name] => Mike
 			        [title] => ddd
 			        [description] => ddd
 			        [date_added] => 1480271839
