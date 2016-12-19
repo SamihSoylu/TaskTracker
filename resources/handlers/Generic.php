@@ -16,10 +16,6 @@ class Generic {
 
 	}
 
-	public function e_log($data) {
-		
-	}
-
 }
 
 ?>
