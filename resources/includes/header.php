@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Wizards - <?php echo PAGE_NAME; ?></title>
+    <title>TaskTracker - <?php echo PAGE_NAME; ?></title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="apple-touch-icon" href="favicon.png" />
@@ -25,7 +25,7 @@
                 <div></div>
                 <div></div>
             </div>
-            <h1><a href="index.php">Wizards</a></h1>
+            <h1><a href="index.php">TaskTracker</a></h1>
             <ul id="menu">
                 <li <?php if(PAGE_NAME == "MyEntries") { echo 'class="active"'; } ?>>
                     <a href="?p=MyEntries">My entries</a>
