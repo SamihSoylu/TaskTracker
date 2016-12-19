@@ -84,7 +84,10 @@
                     } else {
 
                 ?>
-                    <p>There are no entries</p>
+                  <h2>All entries</h2>
+                  <section>
+                    <p class="center">There are no entries</p>
+                  </section>
                 <?php } ?>
         </article>
     </main>
