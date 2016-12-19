@@ -262,6 +262,38 @@ form span {
 	 border:1px solid #4F8A10;
 }
 
+/* #404 Page
+================================================== */
+#notfound {
+    float:left;
+    margin-top:40px;
+}
+#notfound h1 {
+    font-size:48pt;
+    font-family:arial, serif;
+    font-weight:900;
+    color:#1c2635;
+}
+#notfound hr {
+    border: 0;
+    height: 1px;
+    width: 150px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(28, 38, 53), rgba(0, 0, 0, 0));
+    display:block;
+    margin:auto;
+}
+#notfound p span {
+    color:#b51c22;
+    font-weight:bold;
+    font-size:20pt;
+
+}
+#notfound p {
+	text-align:center;
+	font-size:16pt;
+	margin:20px;
+}
+
 /* #Framed image
 ================================================== */
 .framed-img {
