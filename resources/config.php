@@ -10,7 +10,7 @@
 	$config = array (
 
 		"db" => array (
-			"host"     => "localhost", //10.3.0.123
+			"host"     => "localhost",
 			"username" => "task_tracker",
 			//"username" => "root",
 			"password" => "task",
