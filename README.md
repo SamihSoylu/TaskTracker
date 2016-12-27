@@ -13,7 +13,7 @@ I have shared this on GitHub, because I would like others who may face similar c
 
 ### Features
   - Users login system (no admin)
-  - System labels every entry to the week it is been created (week 1 to 52)
+  - System labels every entry to the week it is created (week 1 to 52)
   - Entries are categorized under weeks (View all entires page)
 
 ### How to set up TaskTracker
