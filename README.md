@@ -17,7 +17,7 @@ I have shared this on GitHub, because I would like others who may face similar c
   - Entries are categorized under weeks (View all entires page)
 
 ### How to set up TaskTracker
-Assuming you have met the requirments above, I also assume that you also have a web server with a database ready to begin.
+Assuming you have met the requirments above, let begin.
 
 ### Step 1
   - Download the entire repository.
@@ -36,6 +36,8 @@ Create your first user
   - Go back to your database client and find the users table. Add a new user, give it any name and username, but leave the password field blank.
   - Once you have done that, go to Task Tracker using your browser and sign in using your username. Do not write a password, click login to continue.
   - You will be asked to create a new password, after you do not need to do it again. 
+
+Repeat **step 3** for every new user.
 
 *Your done! Congratulations*
 
