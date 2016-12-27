@@ -39,7 +39,7 @@ Create your first user
 
 Repeat **step 3** for every new user.
 
-*Your done! Congratulations*
+*You're done! Congratulations*
 
 ### Support
 If you think I have missed out something while writing this readme file, or you have suggestions to add. I can be contacted via samih@nivano.nl. If you also find bugs, let me know!
