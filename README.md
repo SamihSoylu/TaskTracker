@@ -22,7 +22,7 @@ Assuming you have met the requirments above, let begin.
 ### Step 1
   - Download the entire repository.
   - Upload everything to your web server except `structure.sql` & `README.md`
-  - Open `structure.sql`, copy the SQL and query it to create two tables, entries and users. (usually using phpMyAdmin or MySQL work bench)
+  - Open `structure.sql`, copy the SQL and [query it](https://www.youtube.com/watch?v=4c50g_RXPZo) to create two tables, entries and users. (usually using phpMyAdmin or MySQL work bench)
 
 ### Step 2
 Once the following tables are created `entries` and `users`, you need to update `config.php`
