@@ -10,12 +10,10 @@
 	$config = array (
 
 		"db" => array (
-			"host"     => "localhost",
-			"username" => "task_tracker",
-			//"username" => "root",
-			"password" => "task",
-			//"password" => "root",
-			"database" => "task_tracker"
+			"host"     => "localhost", 		// your host url here (default: localhost)
+			"username" => "task_tracker", 	// database username
+			"password" => "task", 			// database password
+			"database" => "task_tracker" 	// database name
 		)
 
 	);
