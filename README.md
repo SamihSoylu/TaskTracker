@@ -17,7 +17,7 @@ I have shared this on GitHub, because I would like others who may face similar c
   - Entries are categorized under weeks (View all entires page)
 
 ### How to set up TaskTracker
-Assuming you have met the requirments above, let begin.
+Assuming you have met the requirments above, let's begin.
 
 ### Step 1
   - Download the entire repository.
