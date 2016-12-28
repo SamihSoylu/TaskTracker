@@ -34,17 +34,17 @@
 				# Not signed in
 		   	  	return 0;
 		   		
-		   }
+		    }
 
-		   	 if(ltrim($_SERVER['REQUEST_URI'], '/') == 'index.php') {
+		   	if(ltrim($_SERVER['REQUEST_URI'], '/') == 'index.php') {
 
 		   	 	# Redirect user
 		   	  	header('Location: index.php?p=MyEntries');
 
-		   	  }
+		   	}
 
-		   	  # Signed in
-		   	  return 1;
+			# Signed in
+			return 1;
 			
 		}
 
@@ -86,15 +86,6 @@
 
 			$result = $this->mysqli->query($sql)->fetch_array(MYSQLI_ASSOC);
 
-			/*
-				Query result: 
-
-				Array
-		        (
-		            [id] => 1
-		        )
-			*/
-
 			if(!isset($result['id']))
 				return 0;
 
@@ -118,8 +109,6 @@
 			$sql = "SELECT id FROM users WHERE username = '".$username."'";
 
 			$id = $this->mysqli->query($sql)->fetch_array(MYSQLI_ASSOC);
-
-			//print_r($id);
 
 			# if not username exists
 			if(!isset($id['id'])) {
