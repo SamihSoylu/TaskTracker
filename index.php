@@ -8,21 +8,21 @@
 
 	session_start();
 
-	 # Loads configurations
-	 require_once("resources/config.php");
-	 require_once("resources/db_connect.php");
+	# Loads configurations
+	require_once("resources/config.php");
+	require_once("resources/db_connect.php");
 
-	 # Handlers
-	 require_once(HANDLERS_PATH."Login.php");
-	 require_once(HANDLERS_PATH."Entry.php");
+	# Handlers
+	require_once(HANDLERS_PATH."Login.php");
+	require_once(HANDLERS_PATH."Entry.php");
 
-	 # Variables
-	 $load_page = PAGE_NAME;
-	 $GLOBALS['error_messages'] = "x";
+	# Variables
+	$load_page = PAGE_NAME;
+	$GLOBALS['error_messages'] = "x";
 
-	 # Used later to determine what to display to the user
-	 # If the user is new (Login/Logout module)
-	 $setPassResult = 2; 
+	# Used later to determine what to display to the user
+	# Only if the user is new (Login/Logout module)
+	$setPassResult = 2; 
 
 	/**
 	*
@@ -54,29 +54,33 @@
 	* Entry module
 	*
 	**/
-		$entry_handler = new Entry();
+	$entry_handler = new Entry();
 
-		if(isset($_POST['AddNewEntry']))
-      		$AddEntrySuccess = $entry_handler->WriteUserEntry($_SESSION['user_id'], $_POST['title'], $_POST['desc']);
+	if(isset($_POST['AddNewEntry']))
+  		$AddEntrySuccess = $entry_handler->WriteUserEntry($_SESSION['user_id'], $_POST['title'], $_POST['desc']);
 
-      	if(isset($_POST['UpdateEntry']))
-      		$UpdateEntrySuccess = $entry_handler->UpdateUserEntry($_SESSION['user_id'], $_SESSION['entry_id'], $_POST['title'], $_POST['desc']);
+  	if(isset($_POST['UpdateEntry']))
+  		$UpdateEntrySuccess = $entry_handler->UpdateUserEntry($_SESSION['user_id'], $_SESSION['entry_id'], $_POST['title'], $_POST['desc']);
  
 
-      	if(empty($load_page))
-      		$load_page = "MyEntries";
+	/**
+	*
+	* Load page
+	*
+	**/
+  	if(empty($load_page))
+  		$load_page = "MyEntries";
 
-		# Imports page templates based on page name
-		include(INCLUDES_PATH.'header.php'); 
+	# Imports page templates based on page name
+	include(INCLUDES_PATH.'header.php'); 
 
-		$load_path = TEMPLATE_PATH.$load_page.'.inc.php';
-		if(file_exists($load_path)) {
-			include($load_path);
-		} else {
-			include(TEMPLATE_PATH.'404.php');
-		}
+	$load_path = TEMPLATE_PATH.$load_page.'.inc.php';
+	if(file_exists($load_path)) {
+		include($load_path);
+	} else {
+		include(TEMPLATE_PATH.'404.php');
+	}
 
-		include(INCLUDES_PATH.'footer.php');
-
+	include(INCLUDES_PATH.'footer.php');
 
 ?>
