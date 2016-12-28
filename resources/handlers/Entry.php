@@ -211,14 +211,9 @@
 			# Inserts new record to entries table
 			$result = $this->mysqli->query($sql);
 
-			//echo $sql;
-			//printf("errormessage: %s\n", $this->mysqli->error);
-
 			if($result) {
-				//echo "TRUE";
 				return 1;
 			}
-			//echo "false";
 			return 0;
 		}
 
